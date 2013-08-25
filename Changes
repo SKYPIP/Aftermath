@@ -1,0 +1,12 @@
+CurvedWallFactory	--Constructor
+---------------------------------
+InteriorWallFactory	--Constructor
+---------------------------------
+MaterialFactory 	--"decayed" is now a byte instead of a boolean
+					--Constructor
+					--decayMaterial()
+---------------------------------
+OutsideNSWallFactory--Constructor
+---------------------------------
+OutsideWEWallFactory--Constructor
+---------------------------------
