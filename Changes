@@ -1,0 +1,3 @@
+BuildingLot  		--created a new protected byte "maximumDecayLevel"
+			--BuildingLot(PlatMap,int,int)
+---------------------------------
