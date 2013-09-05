@@ -88,10 +88,10 @@ public abstract class MaterialFactory_2 {
 	}
 	
 	protected void decayMaterial(SupportChunk chunk, int x, int y1, int y2, int z) {
-		if ( 100>decayed && decayed>0 ){
+		if (decayed > 0) {
 			if (  odds.playOdds((double)(decayed/100)) ) {
-			int range = Math.max(1, y2 - y1);
-			chunk.setBlock(x, y1 + odds.getRandomInt(range), z, airId);
+				int range = Math.max(1, y2 - y1);
+				chunk.setBlock(x, y1 + odds.getRandomInt(range), z, airId);
 			}
 		}
 	}
