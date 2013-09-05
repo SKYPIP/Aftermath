@@ -42,6 +42,7 @@ public abstract class BuildingLot extends ConnectedLot {
 	protected MaterialFactory wallsCurved;
 	protected int aboveFloorHeight;
 	protected int basementFloorHeight;
+	protected byte maximumDecayLevel=5;
 	
 	protected final static byte antennaBaseId = (byte) Material.CLAY.getId();
 	protected final static byte antennaId = (byte) Material.FENCE.getId();
@@ -106,8 +107,8 @@ public abstract class BuildingLot extends ConnectedLot {
 		interiorStyle = pickInteriorStyle();
 		columnMaterial = Material.COBBLE_WALL;
 		
-		if (platmap.generator.settings.includeDecayedBuildings){
-			wallsWE = new OutsideWEWallFactory(chunkOdds, (byte)( (100 * Math.random()) -50) );
+		if (platmap.generator.settings.includeDecayedBuildings && 0<=maximumDecayLevel && maximumDecayLevel<=10){
+			wallsWE = new OutsideWEWallFactory(chunkOdds, (byte)( maximumDecayLevel-(10 * Math.random()) ) );
 		} else {
 			wallsWE = new OutsideWEWallFactory(chunkOdds, (byte) 0);
 		}
@@ -115,8 +116,8 @@ public abstract class BuildingLot extends ConnectedLot {
 		wallsNS = new OutsideNSWallFactory(wallsWE);
 		wallsCurved = new CurvedWallFactory(wallsWE);
 		
-		if (platmap.generator.settings.includeDecayedBuildings){
-			wallsInterior = new InteriorWallFactory(chunkOdds, (byte)( (100 * Math.random()) -50) );
+		if (platmap.generator.settings.includeDecayedBuildings && 0<=maximumDecayLevel && maximumDecayLevel<=10){
+			wallsInterior = new InteriorWallFactory(chunkOdds, (byte)( maximumDecayLevel-(10 * Math.random()) ) );
 		} else {
 			wallsInterior = new InteriorWallFactory(chunkOdds, (byte) 0);
 		}
