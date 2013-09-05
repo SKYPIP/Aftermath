@@ -4,7 +4,7 @@ import me.daddychurchill.CityWorld.Context.DataContext;
 
 import org.bukkit.Material;
 
-public abstract class MaterialFactory_2 {
+public abstract class MaterialFactory {
 
 	public enum VerticalStyle {GGGG, WGGG, WGGW, WWWW};
 	public enum HorizontalStyle {WG, WGG, WGGG, WWG, WWGG, GGGG, RANDOM};
@@ -16,7 +16,7 @@ public abstract class MaterialFactory_2 {
 	protected double oddsOfDecay = DataContext.oddsSomewhatLikely;
 	protected byte airId = (byte) Material.AIR.getId();
 	
-	public MaterialFactory_2(Odds odds, byte decayed) {
+	public MaterialFactory(Odds odds, byte decayed) {
 		super();
 		this.odds = odds;
 		if (decayed>0){
@@ -28,7 +28,7 @@ public abstract class MaterialFactory_2 {
 		horizontalStyle = pickHorizontalStyle();
 	}
 	
-	public MaterialFactory_2(MaterialFactory_2 other) {
+	public MaterialFactory(MaterialFactory other) {
 		super();
 		odds = other.odds;
 		decayed = other.decayed;
